@@ -2982,7 +2982,7 @@ function renderProductStockBadges(){
     if(stock <= 0){
       if(addBtn){ addBtn.style.opacity='0.4'; addBtn.disabled=true; addBtn.textContent='Out of Stock'; }
     } else {
-      if(addBtn){ addBtn.style.opacity=''; addBtn.disabled=false; }
+      if(addBtn){ addBtn.style.opacity=''; addBtn.disabled=false; if(/out of stock/i.test(addBtn.textContent)) addBtn.innerHTML='Add to cart &rarr;'; }
       if(outMsg) outMsg.remove();
     }
     // Add new badge
